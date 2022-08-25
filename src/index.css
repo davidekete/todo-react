@@ -1,14 +1,42 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(28, 106, 123) !important;
 }
-body {width: 100vw; height: 100vh;}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+}
+
+.todos-container {
+  width: 100%;
+  margin: 100px auto !important;
+  padding: 100px auto !important;
+}
+
+.todos {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.todos h1 {
+  line-height: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.todos .list-group .list-group-item {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .app {
+    padding: 50px;
+  }
+  .todos-container {
+    width: 50%;
+  }
 }

@@ -1,5 +1,5 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable */
+// eslint-disable
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -10,21 +10,17 @@ function App() {
   const [todos, setTodos] = useState(null);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/todos/').then((result) => {
-      setTodos(result.data);
+    axios.get('https://jsonplaceholder.typicode.com/todos/1').then((result) => {
+      setTodos([result.data]);
     });
   }, []);
 
   return (
-    <div className=" bg-secondary">
-      <div className="app">
-        <div className="">
-          {todos ? <TodoList todos={todos} /> : <Loading />}
-        </div>
+    <div className='app'>
+      <div className='todos-container'>
+        {todos ? <TodoList todos={todos} /> : <Loading />}
       </div>
-
     </div>
-
   );
 }
 
