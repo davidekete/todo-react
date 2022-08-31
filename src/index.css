@@ -32,6 +32,51 @@ body {
   padding: 1rem;
 }
 
+.btncontainer {
+  display: flex;
+  gap: 20px;
+}
+
+.close {
+  border: 0;
+  outline: 0;
+  color: red;
+  background: none;
+}
+
+.todo-form{
+  width: 100%; 
+  display:grid; 
+  grid-template-columns: 1fr 100px; 
+  gap: 20px;
+}
+
+.todo-form input {
+  padding: 1rem,
+} 
+.todo-form button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.todo-form {
+  margin-block: 20px;
+}
+
+.input-field {
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.todo-text-input {
+  border: none;
+  outline: none;
+}
+
+
 @media screen and (min-width: 768px) {
   .app {
     padding: 50px;

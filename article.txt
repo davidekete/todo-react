@@ -1,0 +1,74 @@
+import { createServer } from "miragejs";
+
+const createMockServer = function () {
+  let server = createServer({
+    routes() {
+      this.get("/api/todos", () => {
+        return [
+          { id: 1, title: "walk dog", completed: true },
+          { id: 2, title: "Have Breakfast", completed: false },
+          { id: 2, title: "Have Breakfast", completed: true },
+        ];
+      });
+    },
+  });
+
+  return server;
+};
+
+export default createMockServer;
+
+
+//////Delete
+axios.delete('')
+    .then(() => element.innerHTML = 'Delete successful');
+
+///Update
+const updateTodo = (id) => {
+  const newTodos = todos.map(todo => {
+    if(todo.id === id) {
+      todo.completed = !todo.completed
+    }
+    return todo
+  })
+  setTodos(newTodos)
+}
+
+///
+const deleteTodo = (id) => {
+  setTodos(todos.filter((todo) => todo.id !== id));
+  axios.delete(url, id)
+};
+
+
+
+
+/////////////
+// import { createServer } from "miragejs";
+
+// const createMockServer = function () {
+//   let server = createServer({
+//     routes() {
+//       this.get("/api/todos", () => {
+//         return [
+//           { id: 1, title: "walk dog", completed: true },
+//           { id: 2, title: "Have Breakfast", completed: false },
+//           { id: 3, title: "Have Breakfast", completed: true },
+//         ];
+//       });
+
+//       this.post("/api/todos/new", (schema, reply)=> {
+
+//       })
+//     },
+//   });
+
+//   return server;
+// };
+
+// export default createMockServer;
+///////////////////////////
+
+    seeds(server) {
+      server.create("todo", {[{id:1, title:test, completed: false}, {id:2, title:tests, completed: false}]})
+    },
