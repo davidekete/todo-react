@@ -4,8 +4,6 @@ import axios from "axios";
 import Loading from "./components/loading";
 import TodoList from "./components/TodoList";
 
-import createMockServer from "./mock";
-createMockServer();
 
 function App() {
   const [todos, setTodos] = useState(null);
@@ -14,11 +12,13 @@ function App() {
   const fetchApiData = function (path) {
     axios.get("/api/todos").then((result) => {
       setTodos(result.data);
-    }).then(()=> console.log(todos) )
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if ((userTodo === "")) throw new Error("Field cannot be empty");
 
     const body = {
       title: userTodo,
@@ -28,7 +28,6 @@ function App() {
     axios.post("/api/todos/new", body, options).then((res) => {
       fetchApiData();
     });
-
 
     setUserTodo("");
   };
