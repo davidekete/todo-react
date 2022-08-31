@@ -44,16 +44,17 @@ body {
   background: none;
 }
 
-.todo-form{
-  width: 100%; 
-  display:grid; 
-  grid-template-columns: 1fr 100px; 
-  gap: 20px;
+.todo-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
 }
 
 .todo-form input {
-  padding: 1rem,
-} 
+  padding: 1rem;
+}
 .todo-form button {
   background: none;
   border: none;
@@ -65,17 +66,20 @@ body {
 }
 
 .input-field {
-  border-radius: 5px;
-  border: 1px solid grey;
   padding-top: 10px;
   padding-bottom: 10px;
-
+  padding-inline: 10px;
+  border: none;
 }
+
+.input-field:focus {
+  outline: none;
+}
+
 .todo-text-input {
   border: none;
   outline: none;
 }
-
 
 @media screen and (min-width: 768px) {
   .app {
